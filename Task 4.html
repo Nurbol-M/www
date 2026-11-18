@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Портфолио разработчика</title>
+</head>
+<body>
+
+  <!-- 1. Якорная навигация -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#skills">Навыки</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Секция с локальным/встроенным изображением -->
+    <section id="about">
+      <h1>Привет, я веб-разработчик</h1>
+      
+      <!-- Собственный SVG (не зависит от внешних серверов) -->
+      <svg width="220" height="120" viewBox="1 1 120 120" role="img" aria-label="Абстрактный логотип разработчика в виде синего круга и звезды">
+        <circle cx="60" cy="60" r="50" fill="#2563eb" />
+        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"  fill="gold", stroke="orange" stroke-width="3"/> 
+      </svg>
+
+      <!-- Альтернатива: локальный файл из папки проекта -->
+      <!-- <img src="images/avatar.jpg" alt="Фотография разработчика на рабочем месте" width="200"> -->
+
+      <p>Создаю быстрые и доступные сайты.</p>
+    </section>
+
+    <!-- 2. Список навыков -->
+    <section id="skills">
+      <h2>Мои навыки</h2>
+      <ul>
+        <li>Семантическая верстка (HTML5)</li>
+        <li>Адаптивные стили (CSS3, Flexbox, Grid)</li>
+        <li>Базовый JavaScript</li>
+        <li>Работа с системой контроля версий Git</li>
+      </ul>
+    </section>
+
+    <!-- 3. Внешняя ссылка -->
+    <section id="contacts">
+      <h2>Контакты и проекты</h2>
+      <p>
+        Мои открытые репозитории можно посмотреть на 
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>.
+      </p>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма обратной связи</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #f4f6f8;
+      color: #222;
+      padding: 20px;
+    }
+
+    .contact-form {
+      max-width: 450px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .required-mark {
+      color: #d93025;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    /* Подсветка активного элемента при переходе клавишей Tab */
+    input:focus, select:focus, textarea:focus, button:focus {
+      outline: 3px solid #005fcc;
+      outline-offset: 2px;
+      border-color: #005fcc;
+    }
+
+    /* Подсветка некорректно заполненных полей после начала ввода */
+    input:user-invalid, select:user-invalid, textarea:user-invalid {
+      border-color: #d93025;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #005fcc;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004799;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- action="#" и method="get" предотвращают отправку данных на внешние серверы -->
+  <form class="contact-form" action="#" method="get">
+    <h2>Оставить заявку</h2>
+
+    <div class="form-group">
+      <label for="user-name">
+        Имя <span class="required-mark" aria-hidden="true">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="user-name" 
+        name="name" 
+        placeholder="Например, Айдар"
+        required 
+        minlength="2" 
+        maxlength="50"
+        autocomplete="name"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="user-email">
+        Электронная почта <span class="required-mark" aria-hidden="true">*</span>
+      </label>
+      <input 
+        type="email" 
+        id="user-email" 
+        name="email" 
+        placeholder="example@domain.com"
+        required
+        autocomplete="email"
+      >
+    </div>
+
+     <div class="form-group">
+      <label for="user-phone">
+        Телефон <span class="required-mark" aria-hidden="true">*</span>
+      </label>
+      <input 
+        type="tel" 
+        id="user-phone" 
+        name="phone" 
+        placeholder="+7 (___) ___-__-__"
+        required
+        pattern="\+7\s?\(\d{3}\)\s?\d{3}-\d{2}-\d{2}"
+        title="Введите номер в формате +7 (XXX) XXX-XX-XX"
+        autocomplete="tel"
+        minlength="11"
+        maxlength="12"
+      >
+    <div class="form-group">
+      <label for="direction">
+        Направление <span class="required-mark" aria-hidden="true">*</span>
+      </label>
+      <select id="direction" name="direction" required>
+        <option value="" disabled selected>Выберите направление...</option>
+        <option value="frontend">Frontend-разработка</option>
+        <option value="backend">Backend-разработка</option>
+        <option value="design">UI/UX-дизайн</option>
+        <option value="analytics">Аналитика данных</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="user-message">
+        Сообщение <span class="required-mark" aria-hidden="true">*</span>
+      </label>
+      <textarea 
+        id="user-message" 
+        name="message" 
+        rows="4" 
+        placeholder="Кратко опишите ваш вопрос (минимум 10 символов)..."
+        required 
+        minlength="10" 
+        maxlength="500"
+      ></textarea>
+    </div>
+
+    <button type="submit">Отправить форму</button>
+  </form>
+
+</body>
+</html>
